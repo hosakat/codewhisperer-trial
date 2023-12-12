@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // React component that renders a simple integer calculator
 // supporting addition, subtraction, multiplication and division.
 //
 // example:
 //   <CalculatorPage />
-export function CalculatorPage() {
+export const CalculatorPage =(): React.ReactElement => {
   return (
     <div className="calculator-page">
       <h1>Calculator</h1>
@@ -18,7 +18,7 @@ export function CalculatorPage() {
 //  0 1 2 3 4 5 6 7 8 9
 //  + - * / = AC
 // and displays the result of the calculation corresponding to the number and operator pressed
-const Calculator = () => {
+const Calculator = (): React.ReactElement  => {
   // component state:
   //    first: string; first value for calculations, use setFirst to change
   //    lastOperand: string; last operand for calculations, use setLastOperand to change
@@ -37,7 +37,7 @@ const Calculator = () => {
   //  if operand is "*" then multiply first and second values and set result
   //  if operand is "/" then divide first and second values and set result
   //  if operand is "=" then set result to first value
-  const calculate = (operand: string) => {
+  const calculate = (operand: string):number => {
     switch (operand) {
       case '+':
         setResult(first + second);
