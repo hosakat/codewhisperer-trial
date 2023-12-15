@@ -5,14 +5,12 @@ import React, { useState } from 'react';
 //
 // example:
 //   <CalculatorPage />
-export const CalculatorPage =(): React.ReactElement => {
-  return (
+export const CalculatorPage =(): React.ReactElement => (
     <div className="calculator-page">
       <h1>Calculator</h1>
       <Calculator />
     </div>
-  );
-}
+  )
 
 // calculator has following buttons:
 //  0 1 2 3 4 5 6 7 8 9
@@ -36,26 +34,40 @@ const Calculator = (): React.ReactElement  => {
   //  if operand is "-" then subtract first and second values and set result
   //  if operand is "*" then multiply first and second values and set result
   //  if operand is "/" then divide first and second values and set result
-  //  if operand is "=" then set result to first value
-  const calculate = (operand: string):number => {
+  // Try to reduce the number of renderings as much as possible.
+  const calculate = (operand: string): number => {
     switch (operand) {
       case '+':
-        setResult(first + second);
         return first + second;
       case '-':
-        setResult(first - second);
         return first - second;
       case '*':
-        setResult(first * second);
         return first * second;
       case '/':
-        setResult(first / second);
         return first / second;
       default:
-        setResult(first);
         return first;
     }
-  };
+  }
+  // const calculate = (operand: string):number => {
+  //   switch (operand) {
+  //     case '+':
+  //       setResult(first + second);
+  //       return first + second;
+  //     case '-':
+  //       setResult(first - second);
+  //       return first - second;
+  //     case '*':
+  //       setResult(first * second);
+  //       return first * second;
+  //     case '/':
+  //       setResult(first / second);
+  //       return first / second;
+  //     default:
+  //       setResult(first);
+  //       return first;
+  //   }
+  // };
 
   // invoked when clear button is clicked
   const clear = () => {

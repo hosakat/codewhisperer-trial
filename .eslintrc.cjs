@@ -38,10 +38,10 @@ module.exports = {
     rules: {
       '@typescript-eslint/array-type': 2, // Array<foo>をfoo[]に統一
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'], // interfaceではなくtypeに統一
-      '@typescript-eslint/explicit-function-return-type': [
-        'error',
-        { allowExpressions: true, allowTypedFunctionExpressions: true },
-      ],
+      // '@typescript-eslint/explicit-function-return-type': [
+      //   'error',
+      //   { allowExpressions: true, allowTypedFunctionExpressions: true },
+      // ],
       '@typescript-eslint/method-signature-style': 'error', // オブジェクトの関数型のプロパティ宣言にmethod signature（挙動が双変）を禁止
       '@typescript-eslint/no-namespace': 'off',
       // '@typescript-eslint/no-unused-vars': 'off', // unused-importsと重複
